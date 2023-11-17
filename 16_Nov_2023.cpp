@@ -18,10 +18,7 @@ public:
         possibleCombination(nums,ans,ds);
         ds.pop_back();
     }
-    string findDifferentBinaryString(vector<string>& nums) {
-        
-        
-    }
+    
 };
 
 int main()
@@ -46,6 +43,6 @@ int main()
             break;
         }
     }
-    
-    
+
+    return 0;
 }
