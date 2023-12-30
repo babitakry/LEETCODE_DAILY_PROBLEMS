@@ -52,11 +52,3 @@ class Solution {
   }
 };
 
-int main()
-{
-    Solution s1;
-    string s = "aabbaa";
-    int  k = 2;
-    cout<<s1.getLengthOfOptimalCompression(s,k);
-    return 0;
-}
