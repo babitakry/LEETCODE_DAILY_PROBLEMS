@@ -1,4 +1,4 @@
-// 
+// 786. K-th Smallest Prime Fraction
 
 #include<bits/stdc++.h>
 using namespace std;
