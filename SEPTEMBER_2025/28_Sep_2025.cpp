@@ -1,5 +1,5 @@
 // 976. Largest Perimeter Triangle
-#include<vector>
+#include <vector>
 using namespace std;
 
 class Solution {
