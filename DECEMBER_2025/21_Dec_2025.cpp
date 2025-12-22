@@ -23,8 +23,7 @@ public:
             }
 
             for (int i = 1; i < n; i++) {
-                alreadySorted[i - 1] =
-                    alreadySorted[i - 1] | strs[i - 1][j] < strs[i][j];
+                alreadySorted[i - 1] = alreadySorted[i - 1] | strs[i - 1][j] < strs[i][j];
             }
         }
         return cnt;
