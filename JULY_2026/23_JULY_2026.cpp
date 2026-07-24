@@ -1,4 +1,4 @@
-// 3514. Number of Unique XOR Triplets II
+// 3513. Number of Unique XOR Triplets I
 
 class Solution {
 public:
