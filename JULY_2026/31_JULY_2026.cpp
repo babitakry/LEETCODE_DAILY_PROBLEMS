@@ -1,4 +1,4 @@
-// 3014. Minimum Number of Pushes to Type Word I
+// 3016. Minimum Number of Pushes to Type Word II
 
 #include <vector>
 #include <unordered_map>
