@@ -1,9 +1,14 @@
 // 3090. Maximum Length Substring With Two Occurrences
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-// Optimized Approach
+// ----------------------------------------------------------
+// Optimized Approach (Sliding Window)
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+// ----------------------------------------------------------
+
 class Solution {
 public:
     int maximumLengthSubstring(string s) {
@@ -18,9 +23,11 @@ public:
 
             while (mpp[s[r]] > 2) {
                 mpp[s[l]]--;
+
                 if (mpp[s[l]] == 0) {
                     mpp.erase(s[l]);
                 }
+
                 l++;
             }
 
@@ -34,7 +41,12 @@ public:
     }
 };
 
+// ----------------------------------------------------------
 // Brute Force Approach
+// Time Complexity: O(n²)
+// Space Complexity: O(1)
+// ----------------------------------------------------------
+
 class Solution {
 public:
     int maximumLengthSubstring(string s) {
@@ -43,11 +55,14 @@ public:
 
         for (int i = 0; i < n; i++) {
             unordered_map<char, int> mpp;
+
             for (int j = i; j < n; j++) {
                 mpp[s[j]]++;
+
                 if (mpp[s[j]] > 2) {
                     break;
                 }
+
                 maxi = max(maxi, j - i + 1);
             }
         }
@@ -56,18 +71,25 @@ public:
     }
 };
 
+// ----------------------------------------------------------
 // My Approach
+// Time Complexity: O(n³)
+// Space Complexity: O(n)
+// ----------------------------------------------------------
+
 class Solution {
 public:
     int maximumLengthSubstring(string s) {
         int maxi = INT_MIN;
-        
-        for(int i = 0; i < s.size(); i++){
-            for(int j = i; j < s.size(); j++){
+
+        for (int i = 0; i < s.size(); i++) {
+            for (int j = i; j < s.size(); j++) {
                 int len = j - i + 1;
+
                 string sub = s.substr(i, len);
 
                 unordered_map<char, int> mpp;
+
                 for (int k = 0; k < len; k++) {
                     mpp[sub[k]]++;
                 }
@@ -86,6 +108,7 @@ public:
                 }
             }
         }
+
         return maxi;
     }
 };
