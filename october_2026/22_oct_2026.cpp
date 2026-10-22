@@ -1,0 +1,36 @@
+// 3863. Minimum Operations to Sort a String
+
+#include <string>     // string
+#include <algorithm> 
+using namespace std;
+
+class Solution {
+public:
+    int minOperations(string s) {
+        int n = s.size();
+
+        if (is_sorted(s.begin(), s.end())) {
+            return 0;
+        }
+
+        if (n == 2) {
+            return -1;
+        }
+
+        char maxi = *max_element(s.begin(), s.end());
+        char mini = *min_element(s.begin(), s.end());
+
+
+        if (s[0] == mini || s[n - 1] == maxi) {
+            return 1;
+        }
+
+        for (int i = 1; i < n - 1; i++) {
+            if (s[i] == mini || s[i] == maxi) {
+                return 2;
+            }
+        }
+
+        return 3;
+    }
+};
